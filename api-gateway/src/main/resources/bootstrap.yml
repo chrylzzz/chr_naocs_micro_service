@@ -1,0 +1,30 @@
+server:
+  port: 50000 #网关端口
+spring:
+  application:
+    name: api-gateway
+  main:
+    allow-bean-definition-overriding: true  #springBoot 2.1 需要设定,防止重复
+  cloud:
+    nacos:
+      # 服务发现
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: 1d2314c3-ba9a-4542-9090-05ba1ded1c2d
+        cluster-name: CHRYLTEST
+      # 配置管理
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+        namespace: 1d2314c3-ba9a-4542-9090-05ba1ded1c2d
+        group: CHRYLTEST
+
+#zuul配置,现在引入了naocs ,所以,放入nacos里进行动态的配置
+#zuul:
+#  routes:
+    #对应application1的服务(app)名,这里的意思是针对哪个服务的名字
+#    application1:
+#      stripPrefix: false
+      #这里请求application1服务,而application1的地址打头的(/application1)都转发到application1
+      # 所有 /application1/** 以application1打头的都转发到application1:
+#      path: /application1/**
