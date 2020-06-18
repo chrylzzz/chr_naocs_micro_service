@@ -2,7 +2,6 @@ package com.chryl.mapper;
 
 import com.chryl.po.ChrGoods;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Map;
@@ -12,10 +11,7 @@ import java.util.Map;
  *
  * @author Chr.yl
  */
-@Repository
-public interface GoodsMapper
-//        extends JpaRepository<ChrGoodsModel, Integer>
-{
+public interface GoodsMapper {
 
     List<ChrGoods> getAllGoods();
 

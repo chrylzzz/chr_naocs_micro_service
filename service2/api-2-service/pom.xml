@@ -12,4 +12,11 @@
     <artifactId>api-2-service</artifactId>
 
 
+    <dependencies>
+        <dependency>
+            <groupId>com.chryl</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>

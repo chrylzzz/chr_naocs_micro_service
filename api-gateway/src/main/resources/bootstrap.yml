@@ -22,9 +22,12 @@ spring:
 #zuul配置,现在引入了naocs ,所以,放入nacos里进行动态的配置
 #zuul:
 #  routes:
-    #对应application1的服务(app)名,这里的意思是针对哪个服务的名字
+#   # 对应application1的服务(app)名,这里的意思是针对哪个服务的名字
 #    application1:
 #      stripPrefix: false
-      #这里请求application1服务,而application1的地址打头的(/application1)都转发到application1
-      # 所有 /application1/** 以application1打头的都转发到application1:
+#    #  这里请求application1服务,而application1的地址打头的(/application1)都转发到application1
+#     #  所有 /application1/** 以application1打头的都转发到application1:
 #      path: /application1/**
+#    application2:
+#      stripPrefix: false
+#      path: /application2/**

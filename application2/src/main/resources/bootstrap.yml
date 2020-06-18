@@ -1,0 +1,23 @@
+server:
+  port: 50200
+  servlet:
+    context-path: /application2   #注意前面有个 /
+spring:
+  application:
+    name: application2
+# nacos
+  main:
+    allow-bean-definition-overriding: true  #springBoot 2.1 需要设定,防止重复
+  cloud:
+      nacos:
+        # 服务发现
+        discovery:
+          server-addr: 127.0.0.1:8848
+          namespace: 1d2314c3-ba9a-4542-9090-05ba1ded1c2d
+          cluster-name: CHRYLTEST
+        # 配置管理
+        config:
+          server-addr: 127.0.0.1:8848
+          file-extension: yaml
+          namespace: 1d2314c3-ba9a-4542-9090-05ba1ded1c2d
+          group: CHRYLTEST

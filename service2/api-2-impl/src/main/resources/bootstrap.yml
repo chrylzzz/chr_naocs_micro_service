@@ -1,9 +1,9 @@
 server:
-  port: 50500
+  port: 50600
 
 spring:
   application:
-    name: service1
+    name: service2
 # date
   jackson:
     date-format: yyyy-MM-dd
@@ -47,7 +47,7 @@ dubbo:
     base-packages: com.chryl.api.impl
   protocol:
     name: dubbo
-    port: ${dubbo_port:20881}
+    port: ${dubbo_port:20891}
   registry:
     address: nacos://127.0.0.1:8848
 #    group:  #指定注册的组

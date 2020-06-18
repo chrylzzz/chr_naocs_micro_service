@@ -12,13 +12,14 @@
         <result column="is_use" jdbcType="INTEGER" property="isUse"/>
         <result column="role_id" jdbcType="INTEGER" property="roleId"/>
     </resultMap>
-    <!-- 根据用户名查询用户信息 -->
-    <select id="selectUserByUName" resultMap="userMap" parameterType="string">
-        SELECT * FROM chr_user u WHERE u.username = #{uName}
-    </select>
     <!-- 获取所有的用户列表 -->
-    <select id="getAllUsers" resultType="com.chryl.po.ChrUser">
-        SELECT username FROM chr_user u
+    <select id="getAllUsers" resultMap="userMap" parameterType="com.chryl.po.ChrUser">
+        SELECT * FROM chr_user u
+    </select>
+
+    <!-- 根据用户名查询用户信息 -->
+    <select id="selectUserByUName" resultType="com.chryl.po.ChrUser" parameterType="string">
+        SELECT * FROM chr_user u WHERE u.username = #{uName}
     </select>
 
 </mapper>

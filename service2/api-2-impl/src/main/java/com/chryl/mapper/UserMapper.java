@@ -11,6 +11,7 @@ import java.util.List;
  * @author Chr.yl
  */
 public interface UserMapper {
+
     ChrUser selectUserByUName(@Param("uName") String uName);
 
     List<ChrUser> getAllUsers();
