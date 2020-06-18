@@ -13,7 +13,7 @@
         <result column="role_id" jdbcType="INTEGER" property="roleId"/>
     </resultMap>
     <!-- 获取所有的用户列表 -->
-    <select id="getAllUsers" resultMap="userMap" parameterType="com.chryl.po.ChrUser">
+    <select id="getAllUsers" resultMap="userMap">
         SELECT * FROM chr_user u
     </select>
 
