@@ -21,3 +21,4 @@ spring:
           file-extension: yaml
           namespace: 1d2314c3-ba9a-4542-9090-05ba1ded1c2d
           group: CHRYLTEST
+

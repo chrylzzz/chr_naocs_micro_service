@@ -9,18 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>common</artifactId>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
-        </dependency>
-    </dependencies>
+    <artifactId>service3</artifactId>
+    <packaging>pom</packaging>
+    <description>整合es</description>
+    <modules>
+        <module>api-3-service</module>
+        <module>api-3-impl</module>
+    </modules>
 
 </project>

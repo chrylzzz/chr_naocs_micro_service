@@ -42,5 +42,10 @@
             <artifactId>api-2-service</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.chryl</groupId>
+            <artifactId>api-3-service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>
