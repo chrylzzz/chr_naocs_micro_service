@@ -1,7 +1,6 @@
 package com.chryl.api;
 
 import com.chryl.po.ChrUser;
-import org.springframework.data.domain.Page;
 
 import java.util.List;
 
@@ -14,7 +13,10 @@ public interface EsApiTest {
 
     int importAll2Es();
 
-//    Page<ChrUser> findByUserName(String name, Integer page, Integer limit);
+    //    Page<ChrUser> findByUserName(String name, Integer page, Integer limit);
     List<ChrUser> findByUserName(String name, Integer page, Integer limit);
+
+
+    void delete();
 
 }

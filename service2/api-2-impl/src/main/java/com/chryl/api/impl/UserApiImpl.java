@@ -28,4 +28,9 @@ public class UserApiImpl implements UserApi {
     public List<ChrUser> getAllUsers() {
         return userMapper.getAllUsers();
     }
+
+    @Override
+    public boolean update(ChrUser chrUser) {
+        return false;
+    }
 }

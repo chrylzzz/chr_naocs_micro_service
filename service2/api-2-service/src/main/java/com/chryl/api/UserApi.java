@@ -13,4 +13,6 @@ public interface UserApi {
     boolean insert(ChrUser chrUser);
 
     List<ChrUser> getAllUsers();
+
+    boolean update(ChrUser chrUser);
 }

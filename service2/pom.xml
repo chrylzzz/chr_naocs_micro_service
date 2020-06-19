@@ -11,6 +11,7 @@
 
     <artifactId>service2</artifactId>
     <packaging>pom</packaging>
+    <description>user role 模块</description>
     <modules>
         <module>api-2-service</module>
         <module>api-2-impl</module>

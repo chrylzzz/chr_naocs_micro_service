@@ -11,7 +11,6 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 /**
  * date类型的数据在es中比较繁琐,这里暂时略过date类型 , 暂不配置
@@ -21,7 +20,7 @@ import java.util.Date;
  */
 @Data
 @Document(indexName = "chr", type = "user", shards = 1, replicas = 0)
-public class ChrUser implements Serializable {
+public class EsChrUser implements Serializable {
 
     private static final long serialVersionUID = -3804108461815405271L;
 
@@ -35,18 +34,18 @@ public class ChrUser implements Serializable {
 
     private String password;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    @Field(type = FieldType.Date, format = DateFormat.year_month_day)
-    private LocalDate birthday;
+//    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+//    @Field(type = FieldType.Date, format = DateFormat.year_month_day)
+//    private LocalDate birthday;
 
     private Integer age;
 
     private Integer isUse;//是否使用
 
-    @Field(type = FieldType.Date, format = DateFormat.custom,
-            pattern = "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || yyyy/MM/dd HH:mm:ss|| yyyy/MM/dd ||epoch_millis")//不行没有格式
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
-    private LocalDateTime createTime;
+//    @Field(type = FieldType.Date, format = DateFormat.custom,
+//            pattern = "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || yyyy/MM/dd HH:mm:ss|| yyyy/MM/dd ||epoch_millis")//不行没有格式
+//    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+//    private LocalDateTime createTime;
 
     private String avatar;//头像
 

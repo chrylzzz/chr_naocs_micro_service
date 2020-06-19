@@ -11,6 +11,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -32,8 +33,8 @@ public class ApiEsTestImpl implements EsApiTest {
 
     @Override
     public int importAll2Es() {
-        List<ChrUser> userList = userMapper.getAllUsers();
-        Iterable<ChrUser> chrUserIterable = userEsRepository.saveAll(userList);
+        List<ChrUser> userList = userMapper.getAllUsers();//从db 查
+        Iterable<ChrUser> chrUserIterable = userEsRepository.saveAll(userList);//入 es
         Iterator<ChrUser> iterator = chrUserIterable.iterator();
         int res = 0;
         while (iterator.hasNext()) {
@@ -46,10 +47,15 @@ public class ApiEsTestImpl implements EsApiTest {
     @Override
     public List<ChrUser> findByUserName(String name, Integer page, Integer limit) {
         Pageable pageable = PageRequest.of(page, limit);
-        List<ChrUser> byUsername = userEsRepository.findByUsername(name, pageable);
-
-
+        List<ChrUser> byUsername = userEsRepository.findByUsername(name, pageable);//从es查
         return byUsername;
     }
+
+    @Override
+    public void delete() {
+        //从es删除
+        userEsRepository.deleteAll();
+    }
+
 
 }

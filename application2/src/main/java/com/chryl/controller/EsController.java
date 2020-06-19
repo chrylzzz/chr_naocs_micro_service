@@ -35,4 +35,9 @@ public class EsController {
         return esApiTest.findByUserName(name, page, limit);
     }
 
+    @PostMapping("/delete")
+    public void delete() {
+        esApiTest.delete();
+    }
+
 }

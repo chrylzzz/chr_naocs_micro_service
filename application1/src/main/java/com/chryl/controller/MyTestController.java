@@ -1,8 +1,11 @@
 package com.chryl.controller;
 
 import com.chryl.api.MyTestApi;
+import com.chryl.client.UserRoleFeign;
 import com.chryl.po.ChrGoods;
 import org.apache.dubbo.config.annotation.Reference;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -38,11 +41,12 @@ public class MyTestController {
     public Object query() {
         return myTestApi.query();
     }
-    //replace
 
+    //update
     @PostMapping("/update")
     public boolean show(ChrGoods chrGoods) {
         return myTestApi.update(chrGoods);
     }
+
 
 }
