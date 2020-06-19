@@ -1,6 +1,6 @@
 package com.chryl.api;
 
-import com.chryl.po.ChrUser;
+import com.chryl.po.EsChrUser;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ public interface EsApiTest {
     int importAll2Es();
 
     //    Page<ChrUser> findByUserName(String name, Integer page, Integer limit);
-    List<ChrUser> findByUserName(String name, Integer page, Integer limit);
+    List<EsChrUser> findByUserName(String name, Integer page, Integer limit);
 
 
     void delete();

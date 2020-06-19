@@ -1,7 +1,7 @@
 package com.chryl.repository;
 
 import com.chryl.po.ChrUser;
-import org.springframework.data.domain.Page;
+import com.chryl.po.EsChrUser;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
@@ -13,7 +13,7 @@ import java.util.List;
  * Created by Chr.yl on 2018/6/19.
  */
 //                                                                  1:javaBean;2:idType
-public interface EsProductRepository extends ElasticsearchRepository<ChrUser, Integer> {
+public interface EsProductRepository extends ElasticsearchRepository<EsChrUser, Integer> {
 
     /**
      * 搜索查询:
@@ -22,8 +22,8 @@ public interface EsProductRepository extends ElasticsearchRepository<ChrUser, In
      * @param page     分页信息
      * @return
      */
-//    Page<EsProduct> findByNameOrSubTitleOrKeywords(String name, String subTitle, String keywords, Pageable page);
-    List<ChrUser> findByUsername(String username, Pageable page);
+//    Page<EsProduct> findByNameOrSubTitleOrKeywords(String name, String subTitle, String keywds, Pageable page);
+    List<EsChrUser> findByUsername(String username, Pageable page);
     //注意这里使用Page 接收的话会出现序列化出错,导致dubbo的序列化无法进行,使dubbo默认访问三次都失败,错误内容放在本包的error.txt里
 
 

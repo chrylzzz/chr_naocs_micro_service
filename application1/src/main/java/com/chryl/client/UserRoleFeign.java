@@ -1,5 +1,6 @@
 package com.chryl.client;
 
+import com.chryl.client.fallback.UserRoleFallBack;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
  *
  * @author Chr.yl
  */
-@FeignClient(value = "application2") //value为其他工程yml配置文件的applicationName
+@FeignClient(value = "application2",fallback = UserRoleFallBack.class) //value为其他工程yml配置文件的applicationName
 public interface UserRoleFeign {
 
     //feign.FeignException$NotFound: status 404 reading   ,这种错误为, feign调用的接口 路径不全

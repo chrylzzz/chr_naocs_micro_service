@@ -3,16 +3,13 @@ package com.chryl.api.impl;
 import com.chryl.api.EsApiTest;
 import com.chryl.mapper.UserMapper;
 import com.chryl.po.ChrUser;
+import com.chryl.po.EsChrUser;
 import com.chryl.repository.EsProductRepository;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 
-import java.text.DateFormat;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -33,9 +30,9 @@ public class ApiEsTestImpl implements EsApiTest {
 
     @Override
     public int importAll2Es() {
-        List<ChrUser> userList = userMapper.getAllUsers();//从db 查
-        Iterable<ChrUser> chrUserIterable = userEsRepository.saveAll(userList);//入 es
-        Iterator<ChrUser> iterator = chrUserIterable.iterator();
+        List<EsChrUser> userList = userMapper.getAllUsers();//从db 查
+        Iterable<EsChrUser> chrUserIterable = userEsRepository.saveAll(userList);//入 es
+        Iterator<EsChrUser> iterator = chrUserIterable.iterator();
         int res = 0;
         while (iterator.hasNext()) {
             res++;
@@ -45,9 +42,9 @@ public class ApiEsTestImpl implements EsApiTest {
     }
 
     @Override
-    public List<ChrUser> findByUserName(String name, Integer page, Integer limit) {
+    public List<EsChrUser> findByUserName(String name, Integer page, Integer limit) {
         Pageable pageable = PageRequest.of(page, limit);
-        List<ChrUser> byUsername = userEsRepository.findByUsername(name, pageable);//从es查
+        List<EsChrUser> byUsername = userEsRepository.findByUsername(name, pageable);//从es查
         return byUsername;
     }
 

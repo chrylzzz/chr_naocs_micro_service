@@ -48,9 +48,9 @@
         </dependency>
         <!-- api -1 已经依赖了 common -->
         <!--<dependency>-->
-            <!--<groupId>com.chryl</groupId>-->
-            <!--<artifactId>common</artifactId>-->
-            <!--<version>1.0-SNAPSHOT</version>-->
+        <!--<groupId>com.chryl</groupId>-->
+        <!--<artifactId>common</artifactId>-->
+        <!--<version>1.0-SNAPSHOT</version>-->
         <!--</dependency>-->
     </dependencies>
 </project>

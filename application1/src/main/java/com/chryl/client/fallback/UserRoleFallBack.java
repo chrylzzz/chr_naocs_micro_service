@@ -1,7 +1,6 @@
 package com.chryl.client.fallback;
 
 import com.chryl.client.UserRoleFeign;
-import org.elasticsearch.http.HttpStats;
 
 /**
  * 接口错误返回类
@@ -9,7 +8,11 @@ import org.elasticsearch.http.HttpStats;
  *
  * @author Chr.yl
  */
-//public class UserRoleFallBack implements UserRoleFeign {
-//
-//
-//}
+public class UserRoleFallBack implements UserRoleFeign {
+
+
+    @Override
+    public Object getAllUsers() {
+        return "暂时未查到信息 ~ ";
+    }
+}

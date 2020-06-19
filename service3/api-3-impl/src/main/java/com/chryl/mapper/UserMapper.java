@@ -1,6 +1,6 @@
 package com.chryl.mapper;
 
-import com.chryl.po.ChrUser;
+import com.chryl.po.EsChrUser;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -12,8 +12,8 @@ import java.util.List;
  */
 public interface UserMapper {
 
-    ChrUser selectUserByUName(@Param("uName") String uName);
+    EsChrUser selectUserByUName(@Param("uName") String uName);
 
-    List<ChrUser> getAllUsers();
+    List<EsChrUser> getAllUsers();
 
 }

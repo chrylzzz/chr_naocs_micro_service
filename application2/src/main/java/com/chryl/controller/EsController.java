@@ -2,8 +2,8 @@ package com.chryl.controller;
 
 import com.chryl.api.EsApiTest;
 import com.chryl.po.ChrUser;
+import com.chryl.po.EsChrUser;
 import org.apache.dubbo.config.annotation.Reference;
-import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -28,10 +28,10 @@ public class EsController {
         return esApiTest.importAll2Es();
     }
 
-    @PostMapping("/queryByName")
-    public List<ChrUser> queryByName(String name,
-                                     @RequestParam(required = false, defaultValue = "0") Integer page,
-                                     @RequestParam(required = false, defaultValue = "5") Integer limit) {
+    @PostMapping("ueryByName")
+    public List<EsChrUser> queryByName(String name,
+                                       @RequestParam(required = false, defaultValue = "0") Integer page,
+                                       @RequestParam(required = false, defaultValue = "5") Integer limit) {
         return esApiTest.findByUserName(name, page, limit);
     }
 
