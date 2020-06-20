@@ -6,10 +6,14 @@ import com.chryl.po.ChrUser;
 import com.chryl.po.EsChrUser;
 import com.chryl.repository.EsProductRepository;
 import org.apache.dubbo.config.annotation.Service;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -30,8 +34,17 @@ public class ApiEsTestImpl implements EsApiTest {
 
     @Override
     public int importAll2Es() {
-        List<EsChrUser> userList = userMapper.getAllUsers();//从db 查
-        Iterable<EsChrUser> chrUserIterable = userEsRepository.saveAll(userList);//入 es
+        List<ChrUser> userList = userMapper.getAllUsers();//从db 查
+        List<EsChrUser> esChrUserList = new ArrayList<>();
+        for (ChrUser chrUser : userList) {
+            EsChrUser esChrUser = new EsChrUser();
+            BeanUtils.copyProperties(chrUser, esChrUser);
+            //日期格式暂未实现
+//            esChrUser.setBirthday(chrUser.getBirthday().toString());
+//            esChrUser.setCreateTime(chrUser.getCreateTime().toString());
+            esChrUserList.add(esChrUser);
+        }
+        Iterable<EsChrUser> chrUserIterable = userEsRepository.saveAll(esChrUserList);//入 es,//Validation Failed: 1: no requests added; 为存入es数据为null
         Iterator<EsChrUser> iterator = chrUserIterable.iterator();
         int res = 0;
         while (iterator.hasNext()) {
@@ -53,6 +66,5 @@ public class ApiEsTestImpl implements EsApiTest {
         //从es删除
         userEsRepository.deleteAll();
     }
-
 
 }

@@ -1,7 +1,9 @@
 package com.chryl.po;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.DateFormat;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
@@ -30,17 +32,16 @@ public class EsChrUser implements Serializable {
 
     private String password;
 
-//    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-//    @Field(type = FieldType.Date, format = DateFormat.year_month_day)
+//    @Field(type = FieldType.Date, format = DateFormat.custom, pattern = "yyyy-MM-dd")
+//    private String birthday;
 //    private LocalDate birthday;
 
     private Integer age;
 
     private Integer isUse;//是否使用
 
-//    @Field(type = FieldType.Date, format = DateFormat.custom,
-//            pattern = "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || yyyy/MM/dd HH:mm:ss|| yyyy/MM/dd ||epoch_millis")//不行没有格式
-//    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+//    @Field(type = FieldType.Date, format = DateFormat.custom, pattern = "yyyy-MM-dd HH:mm:ss")
+//    private String createTime;
 //    private LocalDateTime createTime;
 
     private String avatar;//头像

@@ -28,7 +28,7 @@ public class EsController {
         return esApiTest.importAll2Es();
     }
 
-    @PostMapping("ueryByName")
+    @PostMapping("queryByName")
     public List<EsChrUser> queryByName(String name,
                                        @RequestParam(required = false, defaultValue = "0") Integer page,
                                        @RequestParam(required = false, defaultValue = "5") Integer limit) {
