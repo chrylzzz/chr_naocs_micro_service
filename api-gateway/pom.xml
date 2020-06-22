@@ -10,6 +10,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>api-gateway</artifactId>
+    <description>
+        zuul 1.x 为spring cloud 1.x默认的网关,但是缺乏管控,没法动态配置,处理http请求也是web容器,性能不如nginx,有很大问题,
+        所以springcloud 2.x 开始,spring自己开发的api-gateway,而zuul2.x出来之后,springcloud 也没有更换过zuul,
+        目前,springcloud 更希望是api-gateway
+    </description>
 
 
     <dependencies>
