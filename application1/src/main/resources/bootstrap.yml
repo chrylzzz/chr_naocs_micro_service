@@ -1,7 +1,7 @@
 server:
   port: 50100
   servlet:
-    context-path: /application1   #注意前面有个 /
+    context-path: /application1   #注意前面有个 /   ,为什么要写 项目前缀呢,为了 路由的时候写路由规则更容易点
 spring:
   application:
     name: application1
