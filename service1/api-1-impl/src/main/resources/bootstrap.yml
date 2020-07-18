@@ -46,10 +46,12 @@ dubbo:
   scan:
     base-packages: com.chryl.api.impl
   protocol:
-    name: dubbo
-    port: ${dubbo_port:20881}
+    name: dubbo # dubbo协议
+    port: ${dubbo_port:20881} #端口
   registry:
-    address: nacos://127.0.0.1:8848
+    address: nacos://127.0.0.1:8848   #spring-cloud://localhost #这样的写法也可以
+#  cloud:
+#    subscribed-services:   # 订阅的提供者-订阅那个dubbo服务,是dubbo在nacos注册的名字 ,也就是  application.name: service1
 #    nacos://127.0.0.1:8848?backup=127.0.0.1:8849,127.0.0.1:8850
 #    group:  #指定注册的组
   application:
