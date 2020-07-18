@@ -50,6 +50,7 @@ dubbo:
     port: ${dubbo_port:20881}
   registry:
     address: nacos://127.0.0.1:8848
+#    nacos://127.0.0.1:8848?backup=127.0.0.1:8849,127.0.0.1:8850
 #    group:  #指定注册的组
   application:
     qos-enable: false
